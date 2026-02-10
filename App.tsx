@@ -33,7 +33,7 @@ import {
   Star,
   Sparkles
 } from 'lucide-react';
-import { GuideData, Language, TRANSLATIONS } from './types';
+import { GuideData, Language, SectionItem, TRANSLATIONS } from './types';
 import { INITIAL_GUIDE_DATA } from './constants';
 
 const FLAGS: Record<Language, string> = {
@@ -198,7 +198,7 @@ const App: React.FC = () => {
     });
   };
 
-  const renderSectionContent = (section: any) => {
+  const renderSectionContent = (section: SectionItem) => {
     // Special rendering for Check-in section
     if (section.id === 'checkin' && !isAdmin) {
       const [checkinText, checkoutText] = section.description[lang].split('|||').map((s: string) => s.trim());
@@ -367,7 +367,7 @@ const App: React.FC = () => {
         <div className="px-6 pb-8 pt-2 space-y-4">
           {parts.map((part: string, idx: number) => {
             const isAirport = idx === 0;
-            const lines = part.split('\n');
+            const lines = part.trim().split('\n');
             const urlMatch = part.match(/https?:\/\/[^\s]+/);
             const url = urlMatch ? urlMatch[0] : '';
             const title = lines[0] || '';
@@ -411,8 +411,7 @@ const App: React.FC = () => {
     
     // Special rendering for Taxi
     if (section.id === 'taxi' && !isAdmin) {
-      const taxiNumber = "+39000000000";
-      const taxiStandLink = "https://maps.google.com";
+      const { number: taxiNumber, stand: taxiStand } = data.taxi;
 
       return (
         <div className="px-6 pb-8 pt-2 space-y-5">
@@ -451,7 +450,7 @@ const App: React.FC = () => {
 
            {/* Taxi Stand Link */}
            <a
-             href={taxiStandLink}
+             href={taxiStand.mapsUrl}
              target="_blank"
              rel="noopener noreferrer"
              className="flex items-center gap-4 p-5 rounded-[1.8rem] bg-white border border-stone-200 shadow-sm hover:border-amber-200 transition-all active:scale-95 group"
@@ -461,7 +460,7 @@ const App: React.FC = () => {
               </div>
               <div className="flex-1">
                  <div className="font-bold text-stone-900 text-sm">Stazionamento / Taxi Stand</div>
-                 <div className="text-xs font-medium text-stone-500">Piazza Principale</div>
+                 <div className="text-xs font-medium text-stone-500">{taxiStand.name}</div>
               </div>
               <ExternalLink className="w-4 h-4 text-stone-400 group-hover:text-amber-500" />
            </a>
@@ -681,13 +680,13 @@ const App: React.FC = () => {
           <div className="relative flex flex-col sm:flex-row items-center gap-10 mb-12 text-center sm:text-left">
             <div className="relative">
               <div className="w-24 h-24 rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl rotate-3 transition-transform group-hover:rotate-0">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200" alt="Host" />
+                <img src={data.host.imageUrl} alt={data.host.name} />
               </div>
               <div className="absolute -bottom-2 -right-2 bg-emerald-500 w-6 h-6 rounded-full border-4 border-white shadow-sm" title="Online" />
             </div>
             <div>
               <p className="text-amber-800 text-[10px] font-black uppercase tracking-[0.3em] mb-3">{t.yourHost}</p>
-              <h4 className="text-4xl font-black text-stone-900 tracking-tighter">YOUR NAME</h4>
+              <h4 className="text-4xl font-black text-stone-900 tracking-tighter">{data.host.name}</h4>
               <p className="text-stone-500 text-sm mt-2 font-medium">Sempre disponibili per ogni tua esigenza.</p>
             </div>
           </div>

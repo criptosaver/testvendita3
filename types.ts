@@ -30,6 +30,17 @@ export interface GuideData {
     name: string;
     password: string;
   };
+  host: {
+    name: string;
+    imageUrl: string;
+  };
+  taxi: {
+    number: string;
+    stand: {
+      name: string;
+      mapsUrl: string;
+    }
+  };
   sections: SectionItem[];
 }
 
@@ -87,10 +98,10 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     leaveReview: "Lascia una recensione",
     reviewText: "Ti è piaciuto il soggiorno? Lasciaci 5 stelle!",
     checklist: {
-      keys: "Chiavi nella cassetta",
-      lights: "Luci e aria condizionata spente",
-      trash: "Rifiuti buttati",
-      windows: "Finestre chiuse"
+      keys: "Chiavi lasciate sul tavolo o nella lockbox",
+      lights: "Luci e condizionatori spenti",
+      trash: "Spazzatura portata fuori",
+      windows: "Finestre e balconi chiusi"
     }
   },
   [Language.EN]: {
@@ -116,10 +127,10 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     leaveReview: "Leave a review",
     reviewText: "Did you enjoy your stay? Leave us 5 stars!",
     checklist: {
-      keys: "Keys returned to box",
+      keys: "Keys left on the table or in the lockbox",
       lights: "Lights & AC turned off",
-      trash: "Trash disposed",
-      windows: "Windows closed"
+      trash: "Trash taken out",
+      windows: "Windows and balconies closed"
     }
   },
   [Language.DE]: {
@@ -145,10 +156,10 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     leaveReview: "Bewertung abgeben",
     reviewText: "Hat es Ihnen gefallen? Hinterlassen Sie uns 5 Sterne!",
     checklist: {
-      keys: "Schlüssel in der Box",
+      keys: "Schlüssel auf dem Tisch oder in der Schlüsselbox",
       lights: "Licht & Klimaanlage aus",
-      trash: "Müll entsorgt",
-      windows: "Fenster geschlossen"
+      trash: "Müll rausgebracht",
+      windows: "Fenster und Balkone geschlossen"
     }
   },
   [Language.FR]: {
@@ -174,10 +185,10 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     leaveReview: "Laisser un avis",
     reviewText: "Vous avez aimé votre séjour ? Laissez-nous 5 étoiles !",
     checklist: {
-      keys: "Clés dans le boîtier",
+      keys: "Clés laissées sur la table ou dans la boîte",
       lights: "Lumières et climatisation éteintes",
-      trash: "Poubelles vidées",
-      windows: "Fenêtres fermées"
+      trash: "Poubelles sorties",
+      windows: "Fenêtres et balcons fermés"
     }
   },
   [Language.ES]: {
@@ -203,10 +214,10 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     leaveReview: "Dejar una reseña",
     reviewText: "¿Te gustó tu estancia? ¡Déjanos 5 estrellas!",
     checklist: {
-      keys: "Llaves en la caja",
+      keys: "Llaves dejadas en la mesa o en la caja",
       lights: "Luces y aire acondicionado apagados",
-      trash: "Basura tirada",
-      windows: "Ventanas cerradas"
+      trash: "Basura sacada",
+      windows: "Ventanas y balcones cerrados"
     }
   }
 };
