@@ -1,7 +1,7 @@
 import { GuideData } from './types';
 
 export const INITIAL_GUIDE_DATA: GuideData = {
-  propertyName: "Dimora Sorriso",
+  propertyName: "Suite",
   location: "Bari, Italy",
   address: "Via Scipione l'Africano, 29, 70126 Bari BA",
   coordinates: { lat: 41.1121, lng: 16.8903 },
@@ -11,11 +11,11 @@ export const INITIAL_GUIDE_DATA: GuideData = {
     email: "info@dimorasorriso.it"
   },
   wifi: {
-    name: "DimoraSorriso_5G",
+    name: "Dimora_5G",
     password: "welcomeguest"
   },
   host: {
-    name: "Salvatore",
+    name: "Marco",
     imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200"
   },
   taxi: {
