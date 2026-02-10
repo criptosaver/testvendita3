@@ -15,7 +15,7 @@ export const INITIAL_GUIDE_DATA: GuideData = {
     password: "welcomeguest"
   },
   host: {
-    name: "Marco",
+    name: "Katia",
     imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200"
   },
   taxi: {
