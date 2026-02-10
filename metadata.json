@@ -1,0 +1,7 @@
+{
+  "name": "GuidaHost Template - Digital Welcome Guide",
+  "description": "A comprehensive digital concierge and welcome guide template, featuring local recommendations, house rules, and an admin dashboard.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
