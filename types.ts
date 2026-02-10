@@ -76,7 +76,7 @@ export interface TranslationSet {
 
 export const TRANSLATIONS: Record<Language, TranslationSet> = {
   [Language.IT]: {
-    welcome: "Benvenuti a Dimora Sorriso",
+    welcome: "Benvenuti a Suite",
     yourHost: "Il tuo Host",
     copyWifi: "Copia Password WiFi",
     copied: "Copiato!",
@@ -105,7 +105,7 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     }
   },
   [Language.EN]: {
-    welcome: "Welcome to Dimora Sorriso",
+    welcome: "Welcome to Suite",
     yourHost: "Your Host",
     copyWifi: "Copy WiFi Password",
     copied: "Copied!",
@@ -134,7 +134,7 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     }
   },
   [Language.DE]: {
-    welcome: "Willkommen in der Dimora Sorriso",
+    welcome: "Willkommen in der Suite",
     yourHost: "Ihr Gastgeber",
     copyWifi: "WLAN-Passwort kopieren",
     copied: "Kopiert!",
@@ -163,7 +163,7 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     }
   },
   [Language.FR]: {
-    welcome: "Bienvenue à Dimora Sorriso",
+    welcome: "Bienvenue à la Suite",
     yourHost: "Votre Hôte",
     copyWifi: "Copier le mot de passe WiFi",
     copied: "Copié !",
@@ -192,7 +192,7 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
     }
   },
   [Language.ES]: {
-    welcome: "Bienvenidos a Dimora Sorriso",
+    welcome: "Bienvenidos a Suite",
     yourHost: "Tu Anfitrión",
     copyWifi: "Copiar contraseña WiFi",
     copied: "¡Copiado!",

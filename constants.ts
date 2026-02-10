@@ -8,10 +8,10 @@ export const INITIAL_GUIDE_DATA: GuideData = {
   contacts: {
     phone: "+393356626901",
     whatsapp: "+393356626901",
-    email: "info@dimorasorriso.it"
+    email: "info@suite.it"
   },
   wifi: {
-    name: "Dimora_5G",
+    name: "Suite_5G",
     password: "welcomeguest"
   },
   host: {
